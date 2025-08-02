@@ -7,144 +7,159 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f5f9;
       margin: 0;
       padding: 2rem;
-      background-color: #f1f5f9;
       color: #1e293b;
     }
+
     h1 {
       text-align: center;
-      color: #1e40af;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      color: #1d4ed8;
+      margin-bottom: 0.5rem;
     }
+
     p {
       text-align: center;
       font-size: 1.1rem;
       margin-bottom: 2rem;
     }
-    .tool-category-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+
+    .category-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
     }
-    .category-box {
-      background: #ffffff;
-      border: 2px solid #2563eb;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
+
+    .category {
+      background-color: #ffffff;
+      border: 2px solid #3b82f6;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-    .category-box:hover {
-      transform: translateY(-5px);
-    }
-    .category-title {
-      font-size: 1.3rem;
-      font-weight: bold;
+
+    .category h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
       color: #1e40af;
-      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+
     .tool-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    .tool-list li {
-      margin: 0.4rem 0;
+
+    .tool-item {
+      background: #ffffff;
+      border: 1.8px solid #cbd5e1;
+      padding: 10px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.3s ease, border 0.3s ease;
     }
-    .tool-list a {
-      color: #2563eb;
-      text-decoration: none;
-      font-size: 1rem;
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: background 0.2s ease;
-    }
-    .tool-list a:hover {
+
+    .tool-item:hover {
       background: #e0ecff;
+      border-color: #2563eb;
     }
+
+    .tool-item a {
+      color: #1e40af;
+      font-weight: 500;
+      text-decoration: none;
+      flex-grow: 1;
+    }
+
     footer {
       text-align: center;
       margin-top: 3rem;
       font-size: 0.9rem;
-      color: #555;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
-
   <h1>Welcome to AgeCalcAI.com</h1>
   <p>Explore 24+ free, fast, and ad-free online tools:</p>
 
-  <div class="tool-category-container">
-    <!-- 🧮 Calculators -->
-    <div class="category-box">
-      <div class="category-title">📊 Calculators</div>
-      <ul class="tool-list">
-        <li><a href="https://agecalcai.com/age-calculator.html" target="_blank">📅 Age Calculator</a></li>
-        <li><a href="https://agecalcai.com/salary-calculator.html" target="_blank">💼 Salary Calculator</a></li>
-        <li><a href="https://agecalcai.com/percentage-calculator.html" target="_blank">📈 Percentage Calculator</a></li>
-        <li><a href="https://agecalcai.com/calculator.html" target="_blank">🧮 General Calculator</a></li>
-        <li><a href="https://agecalcai.com/file-size-calculator.html" target="_blank">📁 File Size Calculator</a></li>
-        <li><a href="https://agecalcai.com/apush-score-calculator.html" target="_blank">📚 APUSH Score Estimator</a></li>
-      </ul>
+  <div class="category-container">
+
+    <!-- 📊 Calculators -->
+    <div class="category">
+      <h2>📊 Calculators</h2>
+      <div class="tool-list">
+        <div class="tool-item">📅 <a href="https://agecalcai.com/age-calculator.html">Age Calculator</a></div>
+        <div class="tool-item">💼 <a href="https://agecalcai.com/salary-calculator.html">Salary Calculator</a></div>
+        <div class="tool-item">📈 <a href="https://agecalcai.com/percentage-calculator.html">Percentage Calculator</a></div>
+        <div class="tool-item">🧮 <a href="https://agecalcai.com/calculator.html">General Calculator</a></div>
+        <div class="tool-item">📁 <a href="https://agecalcai.com/file-size-calculator.html">File Size Calculator</a></div>
+        <div class="tool-item">📚 <a href="https://agecalcai.com/apush-score-calculator.html">APUSH Score Estimator</a></div>
+      </div>
     </div>
 
-    <!-- ⏱️ Time Tools -->
-    <div class="category-box">
-      <div class="category-title">🕒 Time Tools</div>
-      <ul class="tool-list">
-        <li><a href="https://agecalcai.com/countdown.html" target="_blank">⏳ Countdown Timer</a></li>
-        <li><a href="https://agecalcai.com/time-zone-converter.html" target="_blank">🌍 Time Zone Converter</a></li>
-        <li><a href="https://agecalcai.com/stopwatch.html" target="_blank">⏱️ Stopwatch</a></li>
-        <li><a href="https://agecalcai.com/typing-speed-test.html" target="_blank">⌨️ Typing Speed Test</a></li>
-      </ul>
+    <!-- 🕒 Time Tools -->
+    <div class="category">
+      <h2>🕒 Time Tools</h2>
+      <div class="tool-list">
+        <div class="tool-item">⏳ <a href="https://agecalcai.com/countdown.html">Countdown Timer</a></div>
+        <div class="tool-item">🌍 <a href="https://agecalcai.com/time-zone-converter.html">Time Zone Converter</a></div>
+        <div class="tool-item">⏱️ <a href="https://agecalcai.com/stopwatch.html">Stopwatch</a></div>
+        <div class="tool-item">⌨️ <a href="https://agecalcai.com/typing-speed-test.html">Typing Speed Test</a></div>
+      </div>
     </div>
 
-    <!-- 🔧 Utility Tools -->
-    <div class="category-box">
-      <div class="category-title">🛠️ Utility Tools</div>
-      <ul class="tool-list">
-        <li><a href="https://agecalcai.com/word-counter.html" target="_blank">📝 Word Counter</a></li>
-        <li><a href="https://agecalcai.com/text-case-converter.html" target="_blank">🔠 Text Case Converter</a></li>
-        <li><a href="https://agecalcai.com/password-generator.html" target="_blank">🔐 Password Generator</a></li>
-        <li><a href="https://agecalcai.com/Color-Contrast-Checker.html" target="_blank">🎨 Color Contrast Checker</a></li>
-        <li><a href="https://agecalcai.com/unit-converter.html" target="_blank">📏 Unit Converter</a></li>
-        <li><a href="https://agecalcai.com/QR-Code-Generator.html" target="_blank">🔳 QR Code Generator</a></li>
-        <li><a href="https://agecalcai.com/Random-Number-Generator.html" target="_blank">🎲 Random Number Generator</a></li>
-      </ul>
+    <!-- 🛠️ Utility Tools -->
+    <div class="category">
+      <h2>🛠️ Utility Tools</h2>
+      <div class="tool-list">
+        <div class="tool-item">📝 <a href="https://agecalcai.com/word-counter.html">Word Counter</a></div>
+        <div class="tool-item">🔠 <a href="https://agecalcai.com/text-case-converter.html">Text Case Converter</a></div>
+        <div class="tool-item">🔐 <a href="https://agecalcai.com/password-generator.html">Password Generator</a></div>
+        <div class="tool-item">🎨 <a href="https://agecalcai.com/Color-Contrast-Checker.html">Color Contrast Checker</a></div>
+        <div class="tool-item">📏 <a href="https://agecalcai.com/unit-converter.html">Unit Converter</a></div>
+        <div class="tool-item">🔳 <a href="https://agecalcai.com/QR-Code-Generator.html">QR Code Generator</a></div>
+        <div class="tool-item">🎲 <a href="https://agecalcai.com/Random-Number-Generator.html">Random Number Generator</a></div>
+      </div>
     </div>
 
     <!-- 💻 PC Tools -->
-    <div class="category-box">
-      <div class="category-title">💻 PC Tools</div>
-      <ul class="tool-list">
-        <li><a href="https://agecalcai.com/pc-specs.html" target="_blank">🖥️ PC Specs Checker</a></li>
-        <li><a href="https://agecalcai.com/battery-checker.html" target="_blank">🔋 Battery Health Checker</a></li>
-        <li><a href="https://agecalcai.com/repair-tool.html" target="_blank">🛠️ PC Repair Tool</a></li>
-        <li><a href="https://agecalcai.com/Click-Speed-Test.html" target="_blank">🖱️ Click Speed Test</a></li>
-      </ul>
+    <div class="category">
+      <h2>💻 PC Tools</h2>
+      <div class="tool-list">
+        <div class="tool-item">🖥️ <a href="https://agecalcai.com/pc-specs.html">PC Specs Checker</a></div>
+        <div class="tool-item">🔋 <a href="https://agecalcai.com/battery-checker.html">Battery Health Checker</a></div>
+        <div class="tool-item">🛠️ <a href="https://agecalcai.com/repair-tool.html">PC Repair Tool</a></div>
+        <div class="tool-item">🖱️ <a href="https://agecalcai.com/Click-Speed-Test.html">Click Speed Test</a></div>
+      </div>
     </div>
 
     <!-- 🐾 Pet Tools -->
-    <div class="category-box">
-      <div class="category-title">🐾 Pet Tools</div>
-      <ul class="tool-list">
-        <li><a href="https://agecalcai.com/dog-age.html" target="_blank">🐶 Dog Age Calculator</a></li>
-        <li><a href="https://agecalcai.com/cat-age-calculator.html" target="_blank">🐱 Cat Age Calculator</a></li>
-      </ul>
+    <div class="category">
+      <h2>🐾 Pet Tools</h2>
+      <div class="tool-list">
+        <div class="tool-item">🐶 <a href="https://agecalcai.com/dog-age.html">Dog Age Calculator</a></div>
+        <div class="tool-item">🐱 <a href="https://agecalcai.com/cat-age-calculator.html">Cat Age Calculator</a></div>
+      </div>
     </div>
 
     <!-- ❤️ Fun & Personality -->
-    <div class="category-box">
-      <div class="category-title">❤️ Fun & Personality</div>
-      <ul class="tool-list">
-        <li><a href="https://agecalcai.com/love-compatibility.html" target="_blank">❤️ Love Compatibility Test</a></li>
-      </ul>
+    <div class="category">
+      <h2>❤️ Fun & Personality</h2>
+      <div class="tool-list">
+        <div class="tool-item">❤️ <a href="https://agecalcai.com/love-compatibility.html">Love Compatibility Test</a></div>
+      </div>
     </div>
+
   </div>
 
   <footer>
