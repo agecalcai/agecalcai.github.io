@@ -3,36 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to AgeCalcAI</title>
+  <title>AgeCalcAI - Free Online Tools</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9fafb;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f1f5f9;
       margin: 0;
+      padding: 2rem;
       text-align: center;
     }
     h1 {
-      color: #1e40af;
+      color: #1e3a8a;
+      font-size: 2.5rem;
     }
-    a {
-      padding: 12px 24px;
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    a.tool-button {
+      display: inline-block;
+      padding: 1rem 1.5rem;
       background-color: #2563eb;
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       border-radius: 8px;
-      margin-top: 20px;
-      display: inline-block;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      min-width: 220px;
+    }
+    a.tool-button:hover {
+      background-color: #1e40af;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <h1>Welcome to AgeCalcAI.com</h1>
-  <p>Explore our collection of free online tools.</p>
-  <a href="https://agecalcai.com" target="_blank">🔗 Visit All Tools</a>
+  <p>Explore our collection of free, fast, and ad-free online tools:</p>
+  <div class="button-grid">
+    <a class="tool-button" href="https://agecalcai.com/age-calculator.html" target="_blank">📅 Age Calculator</a>
+    <a class="tool-button" href="https://agecalcai.com/password-generator.html" target="_blank">🔐 Password Generator</a>
+    <a class="tool-button" href="https://agecalcai.com/countdown.html" target="_blank">🕒 Countdown Timer</a>
+    <a class="tool-button" href="https://agecalcai.com/salary-calculator.html" target="_blank">🧮 Salary Calculator</a>
+    <a class="tool-button" href="https://agecalcai.com/time-zone-converter.html" target="_blank">🌍 Time Zone Converter</a>
+    <a class="tool-button" href="https://agecalcai.com/word-counter.html" target="_blank">📝 Word Counter</a>
+  </div>
+  <footer>
+    © 2025 AgeCalcAI.com | All tools are free and open to everyone.
+  </footer>
 </body>
 </html>
