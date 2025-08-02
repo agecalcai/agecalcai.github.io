@@ -3,81 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgeCalcAI - Free Online Tools</title>
+  <title>AgeCalcAI Tools - Free Online Tools</title>
+  <meta name="description" content="Explore 24 free online tools from AgeCalcAI.com including calculators, converters, timers, and fun utilities.">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f1f5f9;
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
       margin: 0;
-      padding: 2rem;
+      padding: 1rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    header {
       text-align: center;
-    }
-    h1 {
-      color: #1e3a8a;
-      font-size: 2.5rem;
-    }
-    p {
-      font-size: 1.2rem;
       margin-bottom: 2rem;
     }
-    .button-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .category {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #007acc;
+    }
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
+      margin-top: 1rem;
     }
-    a.tool-button {
-      display: inline-block;
-      padding: 1rem 1.2rem;
-      background-color: #2563eb;
-      color: #ffffff;
-      text-decoration: none;
+    .tool {
+      padding: 1rem;
+      border: 1px solid #007acc;
       border-radius: 8px;
-      font-size: 0.95rem;
-      transition: background-color 0.3s ease;
-      min-width: 220px;
+      background: #fff;
+      transition: background 0.3s, color 0.3s;
     }
-    a.tool-button:hover {
-      background-color: #1e40af;
+    .dark-mode .tool {
+      background: #1e1e1e;
+      border-color: #007acc;
     }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #555;
+    .tool a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+    .toggle {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to AgeCalcAI.com</h1>
-  <p>Explore our growing collection of free, fast, and ad-free online tools:</p>
-  <div class="button-grid">
-    <a class="tool-button" href="https://agecalcai.com/salary-calculator.html" target="_blank">💼 Salary Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/countdown.html" target="_blank">⏳ Countdown Timer</a>
-    <a class="tool-button" href="https://agecalcai.com/dog-age.html" target="_blank">🐶 Dog Age Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/percentage-calculator.html" target="_blank">📈 Percentage Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/age-calculator.html" target="_blank">📅 Age Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/calculator.html" target="_blank">🧮 General Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/Color-Contrast-Checker.html" target="_blank">🎨 Color Contrast Checker</a>
-    <a class="tool-button" href="https://agecalcai.com/word-counter.html" target="_blank">📝 Word Counter</a>
-    <a class="tool-button" href="https://agecalcai.com/text-case-converter.html" target="_blank">🔠 Text Case Converter</a>
-    <a class="tool-button" href="https://agecalcai.com/password-generator.html" target="_blank">🔐 Password Generator</a>
-    <a class="tool-button" href="https://agecalcai.com/file-size-calculator.html" target="_blank">📁 File Size Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/time-zone-converter.html" target="_blank">🌍 Time Zone Converter</a>
-    <a class="tool-button" href="https://agecalcai.com/unit-converter.html" target="_blank">📏 Unit Converter</a>
-    <a class="tool-button" href="https://agecalcai.com/cat-age-calculator.html" target="_blank">🐱 Cat Age Calculator</a>
-    <a class="tool-button" href="https://agecalcai.com/Random-Number-Generator.html" target="_blank">🎲 Random Number Generator</a>
-    <a class="tool-button" href="https://agecalcai.com/QR-Code-Generator.html" target="_blank">🔳 QR Code Generator</a>
-    <a class="tool-button" href="https://agecalcai.com/stopwatch.html" target="_blank">⏱️ Stopwatch</a>
-    <a class="tool-button" href="https://agecalcai.com/love-compatibility.html" target="_blank">❤️ Love Compatibility Test</a>
-    <a class="tool-button" href="https://agecalcai.com/Click-Speed-Test.html" target="_blank">🖱️ Click Speed Test</a>
-    <a class="tool-button" href="https://agecalcai.com/pc-specs.html" target="_blank">🖥️ PC Specs Checker</a>
-    <a class="tool-button" href="https://agecalcai.com/battery-checker.html" target="_blank">🔋 Battery Health Checker</a>
-    <a class="tool-button" href="https://agecalcai.com/typing-speed-test.html" target="_blank">⌨️ Typing Speed Test</a>
-    <a class="tool-button" href="https://agecalcai.com/repair-tool.html" target="_blank">🛠️ PC Repair Tool</a>
-    <a class="tool-button" href="https://agecalcai.com/apush-score-calculator.html" target="_blank">📚 APUSH Score Estimator</a>
+  <header>
+    <h1>🌐 AgeCalcAI.com – Free Online Tool Collection</h1>
+    <p>100% free, mobile-friendly tools. No login. No ads.</p>
+  </header>
+
+  <div class="toggle">
+    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
   </div>
-  <footer>
-    © 2025 AgeCalcAI.com | All tools are free and open to everyone.
-  </footer>
+
+  <div class="category">
+    <h2>📊 Calculators</h2>
+    <div class="tool-list">
+      <div class="tool"><a href="https://agecalcai.com/age-calculator.html">📅 Age Calculator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/salary-calculator.html">💼 Salary Calculator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/calculator.html">🧮 General Calculator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/percentage-calculator.html">📈 Percentage Calculator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/file-size-calculator.html">📁 File Size Calculator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/unit-converter.html">📏 Unit Converter</a></div>
+      <div class="tool"><a href="https://agecalcai.com/apush-score-calculator.html">📚 APUSH Score Estimator</a></div>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>🕒 Time Tools</h2>
+    <div class="tool-list">
+      <div class="tool"><a href="https://agecalcai.com/countdown.html">⏳ Countdown Timer</a></div>
+      <div class="tool"><a href="https://agecalcai.com/stopwatch.html">⏱️ Stopwatch</a></div>
+      <div class="tool"><a href="https://agecalcai.com/time-zone-converter.html">🌍 Time Zone Converter</a></div>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>🔐 Text & Utility Tools</h2>
+    <div class="tool-list">
+      <div class="tool"><a href="https://agecalcai.com/password-generator.html">🔐 Password Generator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/word-counter.html">📝 Word Counter</a></div>
+      <div class="tool"><a href="https://agecalcai.com/text-case-converter.html">🔠 Text Case Converter</a></div>
+      <div class="tool"><a href="https://agecalcai.com/QR-Code-Generator.html">🔳 QR Code Generator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/Random-Number-Generator.html">🎲 Random Number Generator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/Color-Contrast-Checker.html">🎨 Color Contrast Checker</a></div>
+    </div>
+  </div>
+
+  <div class="category">
+    <h2>🧠 Fun & Speed Test</h2>
+    <div class="tool-list">
+      <div class="tool"><a href="https://agecalcai.com/love-compatibility.html">❤️ Love Compatibility Test</a></div>
+      <div class="tool"><a href="https://agecalcai.com/typing-speed-test.html">⌨️ Typing Speed Test</a></div>
+      <div class="tool"><a href="https://agecalcai.com/Click-Speed-Test.html">🖱️ Click Speed Test</a></div>
+      <div class="tool"><a href="https://agecalcai.com/pc-specs.html">🖥️ PC Specs Checker</a></div>
+      <div class="tool"><a href="https://agecalcai.com/battery-checker.html">🔋 Battery Health Checker</a></div>
+      <div class="tool"><a href="https://agecalcai.com/repair-tool.html">🛠️ PC Repair Tool</a></div>
+      <div class="tool"><a href="https://agecalcai.com/cat-age-calculator.html">🐱 Cat Age Calculator</a></div>
+      <div class="tool"><a href="https://agecalcai.com/dog-age.html">🐶 Dog Age Calculator</a></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 </body>
 </html>
