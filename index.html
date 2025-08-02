@@ -13,6 +13,7 @@
       color: #1e293b;
       margin: 0;
       padding: 0;
+      transition: background 0.3s, color 0.3s;
     }
     header {
       text-align: center;
@@ -26,6 +27,33 @@
     p {
       font-size: 1.2rem;
     }
+
+    .top-controls {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    #searchInput {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      width: 240px;
+      font-size: 1rem;
+    }
+
+    .toggle-switch {
+      display: inline-block;
+      margin-left: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -33,6 +61,7 @@
       gap: 2rem;
       padding: 2rem 1rem;
     }
+
     .category {
       background: #ffffff;
       border: 2px solid #2563eb;
@@ -40,7 +69,9 @@
       padding: 1.5rem;
       width: 300px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s, color 0.3s, border 0.3s;
     }
+
     .category h2 {
       color: #1e40af;
       font-size: 1.5rem;
@@ -48,6 +79,7 @@
       border-bottom: 1px solid #e2e8f0;
       padding-bottom: 0.5rem;
     }
+
     .tool {
       background: #f1f5f9;
       padding: 0.6rem 1rem;
@@ -60,22 +92,56 @@
       text-decoration: none;
       border: 1px solid #cbd5e1;
     }
+
     .tool:hover {
       background-color: #e0edff;
       color: #1d4ed8;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #64748b;
       margin: 3rem 1rem 1rem;
     }
+
     @media screen and (max-width: 960px) {
       .container {
         flex-direction: column;
         align-items: center;
       }
+    }
+
+    /* Dark Mode */
+    body.dark {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    body.dark .category {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    body.dark .tool {
+      background: #334155;
+      color: #e0f2fe;
+      border-color: #475569;
+    }
+
+    body.dark .tool:hover {
+      background: #475569;
+      color: #ffffff;
+    }
+
+    body.dark .category h2 {
+      color: #93c5fd;
+      border-bottom: 1px solid #475569;
+    }
+
+    body.dark .toggle-switch {
+      background: #0ea5e9;
     }
   </style>
 </head>
@@ -85,54 +151,61 @@
     <p>Explore 24+ free, fast, and ad-free online tools:</p>
   </header>
 
-  <div class="container">
+  <div class="top-controls">
+    <input type="text" id="searchInput" placeholder="Search tools..." onkeyup="filterTools()" />
+    <button class="toggle-switch" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+  </div>
+
+  <div class="container" id="toolContainer">
+
+    <!-- CATEGORIES BELOW -->
 
     <div class="category">
       <h2>📊 Calculators</h2>
-      <a class="tool" href="https://agecalcai.com/age-calculator.html">📅 Age Calculator</a>
-      <a class="tool" href="https://agecalcai.com/salary-calculator.html">💼 Salary Calculator</a>
-      <a class="tool" href="https://agecalcai.com/percentage-calculator.html">📈 Percentage Calculator</a>
-      <a class="tool" href="https://agecalcai.com/calculator.html">🧮 General Calculator</a>
-      <a class="tool" href="https://agecalcai.com/file-size-calculator.html">📁 File Size Calculator</a>
-      <a class="tool" href="https://agecalcai.com/apush-score-calculator.html">📚 APUSH Score Estimator</a>
+      <a class="tool">📅 <a href="https://agecalcai.com/age-calculator.html">Age Calculator</a></a>
+      <a class="tool">💼 <a href="https://agecalcai.com/salary-calculator.html">Salary Calculator</a></a>
+      <a class="tool">📈 <a href="https://agecalcai.com/percentage-calculator.html">Percentage Calculator</a></a>
+      <a class="tool">🧮 <a href="https://agecalcai.com/calculator.html">General Calculator</a></a>
+      <a class="tool">📁 <a href="https://agecalcai.com/file-size-calculator.html">File Size Calculator</a></a>
+      <a class="tool">📚 <a href="https://agecalcai.com/apush-score-calculator.html">APUSH Score Estimator</a></a>
     </div>
 
     <div class="category">
       <h2>🕒 Time Tools</h2>
-      <a class="tool" href="https://agecalcai.com/countdown.html">⏳ Countdown Timer</a>
-      <a class="tool" href="https://agecalcai.com/time-zone-converter.html">🌍 Time Zone Converter</a>
-      <a class="tool" href="https://agecalcai.com/stopwatch.html">⏱️ Stopwatch</a>
-      <a class="tool" href="https://agecalcai.com/typing-speed-test.html">⌨️ Typing Speed Test</a>
+      <a class="tool">⏳ <a href="https://agecalcai.com/countdown.html">Countdown Timer</a></a>
+      <a class="tool">🌍 <a href="https://agecalcai.com/time-zone-converter.html">Time Zone Converter</a></a>
+      <a class="tool">⏱️ <a href="https://agecalcai.com/stopwatch.html">Stopwatch</a></a>
+      <a class="tool">⌨️ <a href="https://agecalcai.com/typing-speed-test.html">Typing Speed Test</a></a>
     </div>
 
     <div class="category">
       <h2>🛠️ Utility Tools</h2>
-      <a class="tool" href="https://agecalcai.com/word-counter.html">📝 Word Counter</a>
-      <a class="tool" href="https://agecalcai.com/text-case-converter.html">🔠 Text Case Converter</a>
-      <a class="tool" href="https://agecalcai.com/password-generator.html">🔐 Password Generator</a>
-      <a class="tool" href="https://agecalcai.com/Color-Contrast-Checker.html">🎨 Color Contrast Checker</a>
-      <a class="tool" href="https://agecalcai.com/unit-converter.html">📏 Unit Converter</a>
-      <a class="tool" href="https://agecalcai.com/QR-Code-Generator.html">🔳 QR Code Generator</a>
-      <a class="tool" href="https://agecalcai.com/Random-Number-Generator.html">🎲 Random Number Generator</a>
+      <a class="tool">📝 <a href="https://agecalcai.com/word-counter.html">Word Counter</a></a>
+      <a class="tool">🔠 <a href="https://agecalcai.com/text-case-converter.html">Text Case Converter</a></a>
+      <a class="tool">🔐 <a href="https://agecalcai.com/password-generator.html">Password Generator</a></a>
+      <a class="tool">🎨 <a href="https://agecalcai.com/Color-Contrast-Checker.html">Color Contrast Checker</a></a>
+      <a class="tool">📏 <a href="https://agecalcai.com/unit-converter.html">Unit Converter</a></a>
+      <a class="tool">🔳 <a href="https://agecalcai.com/QR-Code-Generator.html">QR Code Generator</a></a>
+      <a class="tool">🎲 <a href="https://agecalcai.com/Random-Number-Generator.html">Random Number Generator</a></a>
     </div>
 
     <div class="category">
       <h2>💻 PC Tools</h2>
-      <a class="tool" href="https://agecalcai.com/pc-specs.html">🖥️ PC Specs Checker</a>
-      <a class="tool" href="https://agecalcai.com/battery-checker.html">🔋 Battery Health Checker</a>
-      <a class="tool" href="https://agecalcai.com/repair-tool.html">🛠️ PC Repair Tool</a>
-      <a class="tool" href="https://agecalcai.com/Click-Speed-Test.html">🖱️ Click Speed Test</a>
+      <a class="tool">🖥️ <a href="https://agecalcai.com/pc-specs.html">PC Specs Checker</a></a>
+      <a class="tool">🔋 <a href="https://agecalcai.com/battery-checker.html">Battery Health Checker</a></a>
+      <a class="tool">🛠️ <a href="https://agecalcai.com/repair-tool.html">PC Repair Tool</a></a>
+      <a class="tool">🖱️ <a href="https://agecalcai.com/Click-Speed-Test.html">Click Speed Test</a></a>
     </div>
 
     <div class="category">
       <h2>🐾 Pet Tools</h2>
-      <a class="tool" href="https://agecalcai.com/dog-age.html">🐶 Dog Age Calculator</a>
-      <a class="tool" href="https://agecalcai.com/cat-age-calculator.html">🐱 Cat Age Calculator</a>
+      <a class="tool">🐶 <a href="https://agecalcai.com/dog-age.html">Dog Age Calculator</a></a>
+      <a class="tool">🐱 <a href="https://agecalcai.com/cat-age-calculator.html">Cat Age Calculator</a></a>
     </div>
 
     <div class="category">
       <h2>❤️ Fun & Personality</h2>
-      <a class="tool" href="https://agecalcai.com/love-compatibility.html">❤️ Love Compatibility Test</a>
+      <a class="tool">❤️ <a href="https://agecalcai.com/love-compatibility.html">Love Compatibility Test</a></a>
     </div>
 
   </div>
@@ -140,5 +213,28 @@
   <footer>
     © 2025 <a href="https://agecalcai.com" target="_blank">AgeCalcAI.com</a> – All tools are free, mobile-friendly, and ad-free.
   </footer>
+
+  <script>
+    function filterTools() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const categories = document.querySelectorAll(".category");
+
+      categories.forEach(cat => {
+        const tools = cat.querySelectorAll(".tool");
+        let visibleCount = 0;
+        tools.forEach(tool => {
+          const text = tool.innerText.toLowerCase();
+          const isVisible = text.includes(input);
+          tool.style.display = isVisible ? "block" : "none";
+          if (isVisible) visibleCount++;
+        });
+        cat.style.display = visibleCount > 0 ? "block" : "none";
+      });
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 </body>
 </html>
